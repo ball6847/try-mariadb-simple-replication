@@ -3,7 +3,7 @@
 MYSQL="docker-compose exec mysql1 mysql -u root -prootpassword -e "
 
 # TODO: grant specific db
-# $MYSQL "GRANT REPLICATION SLAVE ON *.* TO 'user'@'%';"
+$MYSQL "GRANT REPLICATION SLAVE ON *.* TO 'user'@'%';"
 STATUS=$($MYSQL "SHOW MASTER STATUS;")
 
 echo "$STATUS"

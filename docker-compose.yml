@@ -17,7 +17,6 @@ services:
       - MYSQL_PASSWORD=password
     volumes:
       - ./etc/mysql1/my.cnf:/etc/mysql/my.cnf
-      # - ./database.sql.gz:/docker-entrypoint-initdb.d/database.sql.gz
   mysql2:
     image: mariadb:10.3.1
     environment:

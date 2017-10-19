@@ -9,13 +9,13 @@ docker-compose up -d
 # see output from logs
 docker-compose logs -f
 
-# run step1.sh you should got 2 files in working directory
+# run step1.sh you should see 2 new files in working directory
 # - server1-binlog-file
 # - server1-binlog-position
 # note - this step simply getting replication info from mysql1
 ./step1.sh
 
-# run step2.sh you should got another 2 files
+# run step2.sh you should see another 2 files
 # - server2-binlog-file
 # - server2-binlog-position
 # note - this step use data from step1, setup replication from mysql1 to mysql2

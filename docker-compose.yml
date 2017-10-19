@@ -1,0 +1,29 @@
+version: '2'
+
+# ABOUT CONFIG FILE
+# 
+# server-id = 1 # should be 2 in another node
+# log_bin = /var/log/mysql/mariadb-bin
+# log_bin_index = /var/log/mysql/mariadb-bin.index
+# binlog_do_db = db
+
+services:
+  mysql1:
+    image: mariadb:10.3.1
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=db
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+    volumes:
+      - ./etc/mysql1/my.cnf:/etc/mysql/my.cnf
+      # - ./database.sql.gz:/docker-entrypoint-initdb.d/database.sql.gz
+  mysql2:
+    image: mariadb:10.3.1
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=db
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+    volumes:
+      - ./etc/mysql2/my.cnf:/etc/mysql/my.cnf

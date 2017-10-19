@@ -1,4 +1,4 @@
-Follow this step to test this functional
+Follow this step to test this function
 
 ```sh
 # start up docker service
